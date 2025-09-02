@@ -25,7 +25,7 @@ public sealed class SocialBot
         {
             SlurFilter.Sanitize(content, out var warning);
 
-            await _mastodonClient.PublishStatus(content, spoilerText: warning);
+            await _mastodonClient.PublishStatus(content, Visibility.Unlisted, spoilerText: warning);
         }
         catch (Exception e)
         {
